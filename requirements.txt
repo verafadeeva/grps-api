@@ -1,0 +1,7 @@
+annotated-types==0.6.0
+grpcio==1.60.0
+grpcio-tools==1.60.0
+protobuf==4.25.1
+pydantic==2.5.2
+pydantic_core==2.14.5
+typing_extensions==4.8.0

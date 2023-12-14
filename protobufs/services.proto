@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+enum Status_Service1 {
+    DEFAULT = 0;
+    FIRED = 1;
+    TEMPORARY_NOT_WORKING = 2;
+    WORKS = 3;
+}
+
+enum Status_Service2 {
+    DEFAULT_2 = 0;
+    WORKS_2 = 1;
+    FIRED_2 = 2;
+}
+
+message Empty {
+
+}
+
+message Service1Request {
+    optional int32 id = 1;
+    string first_name = 2;
+    string last_name = 3;
+    string middle_name = 4;
+    repeated string phone_number = 5;
+    Status_Service1 status = 6;
+    string category = 7;
+    string document = 8;
+}
+
+message Service2Request {
+    optional int32 id = 1;
+    string first_name = 2;
+    string last_name = 3;
+    string middle_name = 4;
+    repeated string phone_number = 5;
+    Status_Service2 status = 6;
+}
+
+message Service3Request {
+    string first_name = 1;
+    string last_name = 2;
+    string middle_name = 3;
+    repeated string phone_number = 4;
+    string document = 5;
+}
+
+message Service4Request {
+    string first_name = 1;
+    string last_name = 2;
+    string middle_name = 3;
+    repeated string phone_number = 4;
+}
+
+service MyService {
+    rpc Service1 (Service1Request) returns (Empty);
+    rpc Service2 (Service2Request) returns (Empty);
+    rpc Service3 (Service3Request) returns (Empty);
+    rpc Service4 (Service4Request) returns (Empty);
+}
